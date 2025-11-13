@@ -1,0 +1,42 @@
+{
+  "output": {
+    "type": "object",
+    "properties": {
+      "Summary": { "type": "string" },
+      "Possible Causes": { "type": "string" },
+      "Triage Recommendation": { "type": "string" },
+      "Next Steps": { "type": "string" },
+      "Disclaimer": { "type": "string" },
+      "References": { "type": "string" }
+    },
+    "required": ["Summary", "Triage Recommendation", "Disclaimer", "References"]
+  },
+  "validators": {
+    "safety_keywords": {
+      "type": "contains",
+      "on_fail": "reask",
+      "keywords": ["call doctor", "see a doctor", "emergency", "urgent care", "self-care", "rest", "hydrate"]
+    },
+    "must_have_disclaimer": {
+      "type": "contains",
+      "on_fail": "reask",
+      "keywords": ["not a substitute for professional medical advice", "AI is not a doctor"]
+    },
+    "no_diagnosis_or_drugs": {
+      "type": "excludes",
+      "on_fail": "filter",
+      "keywords": ["diagnose", "prescribe", "medicine", "drug", "tablet", "dosage", "take ", "mg ", "pill"]
+    },
+    "has_references": {
+      "type": "contains",
+      "on_fail": "reask",
+      "keywords": ["NHS", "Mayo Clinic", "MedlinePlus", "Sources:"]
+    },
+    "no_hallucination": {
+      "type": "regex",
+      "on_fail": "filter",
+      "pattern": ".*(I think|possibly|might be|could be a sign of).*",
+      "description": "Avoid speculative language"
+    }
+  }
+}
