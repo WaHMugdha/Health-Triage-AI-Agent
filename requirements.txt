@@ -1,0 +1,11 @@
+streamlit
+langchain
+langgraph
+langchain-community
+python-dotenv
+guardrails-ai
+requests
+beautifulsoup4
+lxml
+tiktoken
+pydantic
