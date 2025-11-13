@@ -1,4 +1,4 @@
-# 🩺 AI Healthcare Triage Assistant (Web-Powered with Grok)
+# AI Healthcare Triage Assistant (Web-Powered with Grok)
 
 An **AI triage assistant** that:
 - Takes symptom input via chat
@@ -9,7 +9,7 @@ An **AI triage assistant** that:
 
 ---
 
-## 🚨 Safety First
+## Safety First
 - No diagnosis
 - No drug names or dosages
 - Mandatory disclaimer
@@ -18,29 +18,12 @@ An **AI triage assistant** that:
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 | Component         | Tool                     |
 |------------------|--------------------------|
 | UI               | Streamlit                |
 | Agent            | LangGraph + LangChain    |
-| LLM              | **Grok (xAI)**           |
+| LLM              | Ollama    |
 | Safety           | Guardrails AI            |
 | Web Data         | BeautifulSoup + Requests |
 | Env              | python-dotenv            |
-
----
-
-## 🛠️ Setup
-
-```bash
-git clone <your-repo-url>
-cd healthcare_ai_agent
-
-# Create .env
-echo "GROK_API_KEY=your_key_here" > .env
-
-# Install
-pip install -r requirements.txt
-
-# Run
-streamlit run app.py
