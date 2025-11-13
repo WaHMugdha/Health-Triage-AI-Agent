@@ -3,7 +3,7 @@
 An **AI triage assistant** that:
 - Takes symptom input via chat
 - Fetches **live data** from **NHS, Mayo Clinic, MedlinePlus**
-- Uses **Grok (xAI)** via LangGraph + Guardrails
+- Uses Ollama
 - Outputs **safe, structured triage advice**
 - **Never diagnoses or prescribes**
 
@@ -23,7 +23,8 @@ An **AI triage assistant** that:
 |------------------|--------------------------|
 | UI               | Streamlit                |
 | Agent            | LangGraph + LangChain    |
-| LLM              | Ollama    |
+| LLM              | Ollama                   |
 | Safety           | Guardrails AI            |
 | Web Data         | BeautifulSoup + Requests |
 | Env              | python-dotenv            |
+
